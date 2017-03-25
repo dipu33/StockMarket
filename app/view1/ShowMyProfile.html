@@ -1,0 +1,24 @@
+<div ng-controller="UpdateProfile" class="col-lg-12 col-xs-12 col-sm-12 col-md-12">
+<h1>Username:{{username}}</h1>
+    <h3>DOB:{{b_date}}</h3>
+    <button type="button" class="btn btn-primary"  onclick="ShowInput()">Change Password</button>
+
+        <form name="myForm" id="ChangePassForm" style="display: none">
+            <input type="password" name="password" placeholder="Enter An Old Password" ng-model="password_old">
+            <br>
+            <input type="password" placeholder="Enter A new Password" ng-model="password_new" id="password" name="password" ng-model="formData.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+            <span ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
+            <span ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+            <span ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
+            <br />
+            <input type="password" placeholder="Confirm Password" id="password_c" name="password_c" ng-model="formData.password_c" valid-password-c required  />
+            <span ng-show="myForm.password_c.$error.required && myForm.password_c.$dirty">Please confirm your password.</span>
+            <span ng-show="!myForm.password_c.$error.required && myForm.password_c.$error.noMatch && myForm.password.$dirty">Passwords do not match.</span>
+            <br/>
+
+            <button type="submit" class="btn btn-primary" ng-click="ChangePassword()" >Update Password</button>
+        </form>
+    </div>
+
+
+</div>

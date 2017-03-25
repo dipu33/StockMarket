@@ -1,0 +1,32 @@
+<form ng-controller="EquityController" ng-submit="Buy()">
+    <div class="form-group">
+        <label for="sel1">Select Trading List:</label>
+        <select class="form-control" id="sel1" ng-model="StockExchange" ng-change="StockExchangeChange(StockExchange)" required>
+            <option style="display:none" value="" ng-show="false">Select StockExchange</option>
+            <option value="NSE" selected>NSE</option>
+            <option value="BSE">BSE</option>
+        </select>
+    </div>
+    <div class="form-group" >
+        <label for="sel1">Enter Stock Name:</label>
+        <input type="text" ng-model="result" typeahead="obj.Stock_Sym for obj in stock_name($viewValue|uppercase )"  style="
+        width: 80%;text-transform: uppercase;"  typeahead-on-select="tempfun(result)" ng-change="tempfun(result)" required></div>
+        <span ng-hide="checkary(result) && result">Stock Name Is Not Valid</span>
+    <div class="form-group">
+        <label for="sel1">Current Stock Price:</label>
+        <input type="number" class="form-control"  id="StockPrice" value="{{Stock_val}}" required disabled>
+    </div>
+    <div class="form-group">
+        <label for="sel1">Available Stock Quantity:</label>
+        <input type="number" class="form-control"  id="AvaStockQuantity" value="{{Stock_Ava}}" required disabled>
+    </div>
+    <div class="form-group">
+        <label for="sel1">Enter Stock Quantity:</label>
+        <input type="number" min="1" id="BuyStockQuantity" class="form-control"  required ng-model="BuyStockQuantity" ng-change="">
+        <span ng-show="BuyStockQuantity>Stock_Ava">Stock Quantity should not more then available quantity</span>
+        <span ng-show="CheckBudget()">Insufficiant Budget</span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" name="Buy"  ng-disabled="!checkary(result) || BuyStockQuantity>Stock_Ava || CheckBudget()">Buy</button>
+    </div>
+</form>

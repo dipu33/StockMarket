@@ -1,0 +1,38 @@
+<form ng-controller="FinalOrderController" class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label " >UserName:</label>
+        <label class="control-label " >{{username}}</label>
+        </br>
+
+
+        <label class="control-label " >Stock Exchange:</label>
+        <label class="control-label " >{{StockExchange}}</label>
+        </br>
+
+        <label class="control-label " >Stock:</label>
+        <label class="control-label " >{{StockName}}</label>
+        </br>
+
+        <label class="control-label " >Stock Price:</label>
+        <label class="control-label " >{{StockVal}}</label>
+        </br>
+
+        <label class="control-label " >Stock Quatity:</label>
+        <label class="control-label " >{{StockQnt}}</label>
+        </br>
+        <label class="control-label " >Total Cost:</label>
+        <label class="control-label " >{{StockQnt * StockVal}}</label>
+        </br>
+
+        <label class="control-label " >Remaining Budget:</label>
+        <label class="control-label " >{{UserBudget-(StockQnt * StockVal)}}</label>
+        </br>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" name="Order" ng-click="StockOrder()">Order</button>
+            <button type="button" class="btn btn-primary" name="CancelOrder" ng-click="OrderCancel()">Cancel</button>
+        </div>
+
+    </div>
+
+</form>
