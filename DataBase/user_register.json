@@ -1,0 +1,22 @@
+{ 
+    "_id" : ObjectId("58b5933af2795001ac3b8db9"), 
+    "username" : "ddd", 
+    "password" : "AsJpD33@", 
+    "email" : "a@gmail.com", 
+    "b_day" : "22-2-2000"
+}
+{ 
+    "_id" : ObjectId("58b6629a5395e81b9c1d6368"), 
+    "username" : "a", 
+    "password" : "a", 
+    "email" : "d@gmail.com", 
+    "b_day" : "22-2-1969"
+}
+{ 
+    "_id" : ObjectId("58b662f150d24a1e480b0470"), 
+    "username" : "nirav", 
+    "password" : "AsJpD33@", 
+    "email" : "aa@gmail.com", 
+    "b_day" : "22-2-1996", 
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJuaXJhdiIsImlhdCI6MTQ4ODM0Nzg4OX0.G0zBNLwMs5-Kq4a08qfbpYLUKLTNcvz-zCSVf7CleTE"
+}
